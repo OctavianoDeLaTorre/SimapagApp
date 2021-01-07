@@ -97,7 +97,7 @@ public class AnalizadorJSON {
 
         String cadenaJSON = null;
         try {
-            url = "http://itsjsistemaentradasalida.000webhostapp.com/scripts_android/" + script;
+            url = Config.url_base + script;
             //url = "http://192.168.1.9/Practicas/ProyectoFinal/scripts_android/" + script;
             mUrl = new URL(url);
             conexion = (HttpURLConnection) mUrl.openConnection();

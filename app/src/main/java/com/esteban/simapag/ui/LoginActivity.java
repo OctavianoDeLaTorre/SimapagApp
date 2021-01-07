@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.esteban.simapag.MainActivity;
+import com.esteban.simapag.MyApp;
 import com.esteban.simapag.R;
 import com.esteban.simapag.analizador.AnalizadorJSON;
 
@@ -96,6 +97,8 @@ public class LoginActivity extends AppCompatActivity {
                     i.putExtra("id", cajaUser.getText().toString());
                     i.putExtra("tipo_usuario", values[2]);
                     Toast.makeText(getApplicationContext(), "Login exitoso", Toast.LENGTH_SHORT).show();
+                    ((MyApp)getApplication()).setIdTrabajador( cajaUser.getText().toString());
+                    ((MyApp)getApplication()).setTipoUsuario( values[2]);
                     startActivity(new Intent(LoginActivity.this,MainActivity.class));
                     finish();
                 } else {
